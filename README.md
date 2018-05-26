@@ -1,6 +1,7 @@
-This is sample file
+# Introduction
+The MovieAppAWS is Go Language Based Project where we will be fetching movie related data using AWS Lanbda.
 
-Check Go installation:
+# Installation
 
 Akshats-MacBook-Pro:MovieAppAWS akshatsharma$ go version
 go version go1.10.2 darwin/amd64
