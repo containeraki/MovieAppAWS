@@ -1,34 +1,39 @@
 package main
 
-import
-(
+import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"new/http"
+	"net/http"
 	"strconv"
 
 	"github.com/aws/aws-lambda-go/lambda"
 )
 
 var (
-	API_KEY = 
+	apikey       = "921303bd9d6beed719ae88231d2534db"
+	ErrorBackend = errors.New("Something went wrong")
 )
 
-type Request struct{
-	ID int 'json:"id"'
+type Request struct {
+	ID int `json:"id"`
 }
 
-type MovieDBResponse struct{
-	Movies []Movie 'json:"results"'
+type MovieDBResponse struct {
+	Movies []Movie `json:"results"`
 }
 
-type Movie struct{
-	Title string 'json:"title"'
-	Description string 'json:"overview"'
-	Cover string 'json:"poster_path"'
-	ReleaseData string 'json:"release_data"'
+type Movie struct {
+	Title       string `json:"title"`
+	Description string `json:"overview"`
+	Cover       string `json:"poster_path"`
+	ReleaseDate string `json:"release_data"`
 }
 
-func Handler(request Request) ([]Movie, error){
+func Handler(request Request) ([]Movie, error) {
+	url := fmt.Sprintf("https://api.themoviedb.org/3/discover/movie?api_key=%s", apikey)
+}
+
+func main() {
+
 }
